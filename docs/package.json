@@ -4,6 +4,12 @@
     "@ai-sdk/anthropic": "catalog:",
     "@ai-sdk/google": "catalog:",
     "@ai-sdk/openai": "catalog:",
+    "@typescript-eslint/parser": "^8.51.0",
+    "eslint": "^9.39.2",
+    "@eslint/markdown": "^7.5.1",
+    "eslint-plugin-import": "^2.32.0",
+    "@stylistic/eslint-plugin": "^5.6.1",
+    "typescript-eslint": "^8.51.0",
     "@shikijs/vitepress-twoslash": "^3.20.0",
     "@types/node": "catalog:",
     "@vertana/cli": "workspace:",
@@ -24,6 +30,8 @@
   "scripts": {
     "dev": "cd ../ && pnpm run --filter '!{docs}' -r build && cd docs/ && vitepress dev",
     "build": "cd ../ && pnpm run --filter '!{docs}' -r build && cd docs/ && NODE_OPTIONS=--max-old-space-size=8192 vitepress build",
-    "preview": "vitepress preview"
+    "preview": "vitepress preview",
+    "lint": "eslint '**/*.md'",
+    "lint:fix": "eslint '**/*.md' --fix"
   }
 }
